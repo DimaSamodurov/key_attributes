@@ -5,6 +5,7 @@ source "http://rubygems.org"
 # Specify your gem's dependencies in key_attributes.gemspec
 gemspec
 
-group :development do
+group :development, :test do
   gem 'rake'
+  gem 'test-unit' # Optional. Currently used to run single test file with command line like: ruby test/test_key_attributes.rb
 end
