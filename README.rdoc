@@ -38,7 +38,7 @@ Example:
 I think this is too tiny gem to be published in rubygems so i keep it in sources.
 You can build it manually or install with bundler:
 
-    gem "key_attributes", :git => "https://DimaSamodurov@github.com/DimaSamodurov/battlesea.git"
+    gem "key_attributes", :git => "https://DimaSamodurov@github.com/DimaSamodurov/key_attributes.git"
 
 == Copyright
 
