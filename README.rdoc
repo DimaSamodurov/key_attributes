@@ -1,0 +1,45 @@
+= Key Attributes
+
+A MongoMapper plugin allowing to extract single level attributes of a model, skipping accociations.
+
+Use cases:
+
+    - export data to csv
+    - accessing model via api
+
+Example:
+
+    class Author
+      include MongoMapper::EmbeddedDocument
+      key :name
+    end
+
+    class Comment
+      include MongoMapper::EmbeddedDocument
+      key :content
+    end
+
+    class Post
+      include MongoMapper::Document
+      key :content
+      key :submitted_at, Time
+
+      one :author
+      many :comments
+
+      plugin KeyAttributes
+    end
+
+    post = Post.first
+    logger.debug(post.key_attributes.to_json)
+
+== Install
+
+I think this is too tiny gem to be published in rubygems so i keep it in sources.
+You can build it manually or install with bundler:
+
+    gem "key_attributes", :git => "https://DimaSamodurov@github.com/DimaSamodurov/battlesea.git"
+
+== Copyright
+
+Dima Samodurov.
