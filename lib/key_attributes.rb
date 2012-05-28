@@ -9,13 +9,11 @@ module KeyAttributes
   end
 
   # Returns attributes of single level
-  module InstanceMethods
-    def key_attributes(options = {except: '_id'})
-      keys = self.key_names
-      keys = [options[:only]].flatten.map(&:to_s) if options[:only]
-      keys = keys - [options[:except]].flatten.map(&:to_s) if options[:except]
-      Hash[keys.map{|key| [ key, self[key] ] }]
-    end
+  def key_attributes(options = {except: ['_id', 'created_at', 'updated_at']})
+    keys = self.key_names
+    keys = [options[:only]].flatten.map(&:to_s) if options[:only]
+    keys = keys - [options[:except]].flatten.map(&:to_s) if options[:except]
+    Hash[keys.map{|key| [ key, self.send(key) ] }]
   end
 end
 
