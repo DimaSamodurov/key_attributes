@@ -4,8 +4,9 @@ A MongoMapper plugin allowing to extract single level attributes of a model, ski
 
 Use cases:
 
-    - export data to csv
+    - exporting data to csv
     - accessing model via api
+    - comparison of model instances in unit tests
 
 Example:
 
@@ -33,13 +34,14 @@ Example:
     post = Post.first
     logger.debug(post.key_attributes.to_json)
 
-== Install
+== Installing
 
-I think this is too tiny gem to be published in rubygems so i keep it in sources.
-You can build it manually or install with bundler:
+I think this is too tiny gem to be published on rubygems.org so i keep it in sources.
+Add to Gemfile:
 
     gem "key_attributes", :git => "https://DimaSamodurov@github.com/DimaSamodurov/key_attributes.git"
 
-== Copyright
+== Testing
 
-Dima Samodurov.
+    bundle
+    rake test

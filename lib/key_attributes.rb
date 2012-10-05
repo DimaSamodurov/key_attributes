@@ -13,7 +13,7 @@ module KeyAttributes
     keys = self.key_names
     keys = [options[:only]].flatten.map(&:to_s) if options[:only]
     keys = keys - [options[:except]].flatten.map(&:to_s) if options[:except]
-    Hash[keys.map{|key| [ key, self.send(key) ] }]
+    Hash[keys.map{|key| [ key.to_sym, self.send(key) ] }].with_indifferent_access
   end
 end
 

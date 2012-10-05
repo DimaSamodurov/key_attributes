@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Dima Samodurov"]
   s.email       = ["dmitriy.samodurov@sap.com"]
   s.homepage    = ""
-  s.summary     = %q{Key attributes - a MongoMapper plugin.}
-  s.description = %q{Plugin allows to extract single level attributes of a model, skipping associations.}
+  s.summary     = %q{Key attributes - a MongoMapper plugin allowing quick access and comparison of single level attributes of a model.}
+  s.description = %q{Plugin can be used when validating request parameters and testing model updates.}
 
   s.rubyforge_project = "key_attributes"
 
@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency(%q<mongo_mapper>, [">= 0.9.2"])
   # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
+  s.add_development_dependency "minitest-reporters"
   # s.add_runtime_dependency "rest-client"
 end
